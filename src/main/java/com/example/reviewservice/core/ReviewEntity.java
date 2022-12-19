@@ -29,5 +29,5 @@ public class ReviewEntity implements Serializable {
     private int rating;
     private int personReview;
     private String phone;
-    private String report;
+    private boolean ban;
 }

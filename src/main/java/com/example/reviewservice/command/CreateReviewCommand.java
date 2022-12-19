@@ -21,6 +21,5 @@ public class CreateReviewCommand {
     private final int rating;
     private final int personReview;
     private final String phone;
-    private final String report;
-    private final String ban;
+    private final boolean ban;
 }

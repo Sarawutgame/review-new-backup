@@ -21,7 +21,7 @@ public class ReviewQueryHandler {
     @QueryHandler
     List<ReviewRestModel> findReviews(FindReviewsQuery query){
         List<ReviewRestModel> reviewsRest = new ArrayList<>();
-        List<ReviewEntity> storedReviews = reviewRepository.findAll();
+        List<ReviewEntity> storedReviews = reviewRepository.findByReviewBan(query.isBan());
         for (ReviewEntity reviewEntity : storedReviews){
             ReviewRestModel reviewRestModel = new ReviewRestModel();
             BeanUtils.copyProperties(reviewEntity, reviewRestModel);

@@ -16,4 +16,6 @@ public class ReviewRestModel {
     private int rating;
     private int personReview;
     private String phone;
+    private boolean ban;
+
 }

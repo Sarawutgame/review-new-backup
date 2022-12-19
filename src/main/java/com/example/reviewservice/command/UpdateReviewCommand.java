@@ -21,8 +21,7 @@ public class UpdateReviewCommand {
     private int rating;
     private int personReview;
     private String phone;
-    private String report;
-    private String ban;
+    private boolean ban;
 
 
     //    private final String _id;

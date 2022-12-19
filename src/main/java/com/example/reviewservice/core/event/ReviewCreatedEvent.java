@@ -16,6 +16,5 @@ public class ReviewCreatedEvent {
     private int rating;
     private int personReview;
     private String phone;
-    private String report;
-    private String ban;
+    private boolean ban;
 }

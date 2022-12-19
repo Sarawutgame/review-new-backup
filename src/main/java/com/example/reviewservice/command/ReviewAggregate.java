@@ -25,9 +25,7 @@ public class ReviewAggregate {
     private int rating;
     private int personReview;
     private String phone;
-
-    private String report;
-    private String ban;
+    private boolean ban;
 
 //    private String _obid = _id.toString();
     public ReviewAggregate() {
@@ -67,8 +65,7 @@ public class ReviewAggregate {
         this.rating = reviewCreatedEvent.getRating();
         this.personReview = reviewCreatedEvent.getPersonReview();
         this.phone = reviewCreatedEvent.getPhone();
-        this.ban = reviewCreatedEvent.getBan();
-        this.report = reviewCreatedEvent.getReport();
+        this.ban = reviewCreatedEvent.isBan();
     }
 
     @CommandHandler
@@ -80,14 +77,6 @@ public class ReviewAggregate {
 
     @EventSourcingHandler
     public void on(ReviewUpdatedEvent event){
-//        this._id = event.get_id();
-//        this.name = event.getName();
-//        this.branch = event.getBranch();
-//        this.rating = event.getRating();
-//        this.store_type = event.getStore_type();
-//        this.timeClose = event.getTimeClose();
-//        this.timeOpen = event.getTimeOpen();
-//        this.report = event.getReport();
         this._id = event.get_id();
         this.name = event.getName();
         this.branch = event.getBranch();
@@ -100,8 +89,7 @@ public class ReviewAggregate {
         this.rating = event.getRating();
         this.personReview = event.getPersonReview();
         this.phone = event.getPhone();
-        this.ban = event.getBan();
-        this.report = event.getReport();
+        this.ban = event.isBan();
     }
 
 }

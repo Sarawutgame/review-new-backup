@@ -21,7 +21,7 @@ public class ReviewQueryController {
 
     @GetMapping("/getAll")
     public List<ReviewRestModel> getReviews(){
-        FindReviewsQuery findReviewsQuery = new FindReviewsQuery();
+        FindReviewsQuery findReviewsQuery = new FindReviewsQuery(false);
         List<ReviewRestModel> reviews = queryGateway
                 .query(findReviewsQuery, ResponseTypes.multipleInstancesOf(ReviewRestModel.class)).join();
         return reviews;

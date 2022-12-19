@@ -41,6 +41,7 @@ public class ReviewCommandController {
                 .timeClose(model.getTimeClose())
                 .personReview(model.getPersonReview())
                 .phone(model.getPhone())
+                .ban(model.isBan())
                 .build();
 
         String result;
@@ -66,7 +67,7 @@ public class ReviewCommandController {
                 .timeClose(model.getTimeClose())
                 .personReview(model.getPersonReview())
                 .phone(model.getPhone())
-                .report(model.getReport())
+                .ban(model.isBan())
                 .build();
 
         String result;
