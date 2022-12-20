@@ -1,18 +1,18 @@
 package com.example.reviewservice.command.rest;
 
 
-
-
 import com.example.reviewservice.command.CreateReviewCommand;
 import com.example.reviewservice.command.UpdateReviewCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Service;
+
 
 import java.util.UUID;
 
-@RestController
-@RequestMapping("/review")
+
+@Service
 public class ReviewCommandController {
 
     private final CommandGateway commandGateway;
@@ -22,13 +22,8 @@ public class ReviewCommandController {
         this.commandGateway = commandGateway;
     }
 
-//    @GetMapping
-//    public String getReview(){
-//        return "Hello_Ja";
-//    }
-
-    @PostMapping
-    public String createReview(@RequestBody CreateReviewModel model){
+    @RabbitListener(queues = "CreateReviewQueue")
+    public String createReview(CreateReviewModel model){
         CreateReviewCommand command = CreateReviewCommand.builder()
                 ._id(UUID.randomUUID().toString())
                 .name(model.getName())
@@ -57,8 +52,8 @@ public class ReviewCommandController {
         return result;
     }
 
-    @PutMapping(value = "/update")
-    public String update(@RequestBody UpdateReviewModel model){
+    @RabbitListener(queues = "UpdateReviewQueue")
+    public String update(UpdateReviewModel model){
         UpdateReviewCommand command = UpdateReviewCommand.builder()
                 ._id(model.get_id())
                 .name(model.getName())
@@ -71,6 +66,7 @@ public class ReviewCommandController {
                 .timeClose(model.getTimeClose())
                 .personReview(model.getPersonReview())
                 .phone(model.getPhone())
+                .rating(model.getRating())
                 .ban(model.isBan())
                 .range(model.getRange())
                 .delivery(model.isDelivery())
@@ -88,8 +84,4 @@ public class ReviewCommandController {
 
     }
 
-    @DeleteMapping
-    public String deleteReview(){
-        return "Delete Review";
-    }
 }

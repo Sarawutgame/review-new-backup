@@ -2,8 +2,10 @@ package com.example.reviewservice.query.rest;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class ReviewRestModel {
+public class ReviewRestModel implements Serializable {
     private String _id;
     private String name;
     private String branch;

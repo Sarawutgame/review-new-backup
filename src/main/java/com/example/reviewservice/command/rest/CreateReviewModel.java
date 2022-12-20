@@ -3,8 +3,10 @@ package com.example.reviewservice.command.rest;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class CreateReviewModel {
+public class CreateReviewModel implements Serializable {
     private String _id;
     private String userId;
     private String name;
