@@ -18,7 +18,7 @@ public class ReviewPublisher {
 
     @PutMapping(value = "/update")
     public String update(@RequestBody UpdateReviewModel model){
-        Object result = rabbitTemplate.convertSendAndReceive("ReviewExchange", "ureview", model);
-        return ((String) result);
+        rabbitTemplate.convertAndSend("ReviewExchange", "ureview", model);
+        return "Update Complete";
     }
 }

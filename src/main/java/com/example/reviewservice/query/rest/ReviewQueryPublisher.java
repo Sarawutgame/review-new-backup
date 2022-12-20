@@ -17,7 +17,6 @@ public class ReviewQueryPublisher {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @GetMapping("/getAll")
     public List<ReviewRestModel> getReviews(){
         Object result = rabbitTemplate.convertSendAndReceive("ReviewExchange", "allreview", "hello");
         return ((List<ReviewRestModel>) result);
