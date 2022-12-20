@@ -45,6 +45,7 @@ public class ReviewCommandController {
                 .range(model.getRange())
                 .delivery(model.isDelivery())
                 .pickUp(model.isPickUp())
+                .userId(model.getUserId())
                 .build();
 
         String result;
@@ -74,6 +75,7 @@ public class ReviewCommandController {
                 .range(model.getRange())
                 .delivery(model.isDelivery())
                 .pickUp(model.isPickUp())
+                .userId(model.getUserId())
                 .build();
 
         String result;

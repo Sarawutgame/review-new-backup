@@ -6,6 +6,8 @@ import lombok.Data;
 public class UpdateReviewModel {
 
     private String _id;
+    private String userId;
+
     private String name;
     private String branch;
     private String store_type;

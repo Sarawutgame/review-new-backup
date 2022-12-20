@@ -20,4 +20,6 @@ public class ReviewCreatedEvent {
     private int range;
     private boolean delivery;
     private boolean pickUp;
+    private String userId;
+
 }

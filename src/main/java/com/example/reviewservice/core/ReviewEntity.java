@@ -33,4 +33,6 @@ public class ReviewEntity implements Serializable {
     private int range;
     private boolean delivery;
     private boolean pickUp;
+    private String userId;
+
 }
