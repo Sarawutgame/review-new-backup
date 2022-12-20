@@ -20,7 +20,7 @@ public class CreateReviewCommand {
     private final String address;
     private final String timeOpen;
     private final String timeClose;
-    private final int rating;
+    private final float rating;
     private final int personReview;
     private final String phone;
     private final boolean ban;
