@@ -1,6 +1,7 @@
 package com.example.reviewservice.query.rest;
 
 import com.example.reviewservice.core.ReviewEntity;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ public class ReviewQueryPublisher {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
+    @GetMapping("/getAll")
     public List<ReviewRestModel> getReviews(){
         Object result = rabbitTemplate.convertSendAndReceive("ReviewExchange", "allreview", "hello");
         return ((List<ReviewRestModel>) result);
