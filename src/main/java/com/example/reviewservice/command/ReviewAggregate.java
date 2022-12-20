@@ -27,6 +27,10 @@ public class ReviewAggregate {
     private String phone;
     private boolean ban;
 
+    private int range;
+    private boolean delivery;
+    private boolean pickUp;
+
 //    private String _obid = _id.toString();
     public ReviewAggregate() {
     }

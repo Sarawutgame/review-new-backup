@@ -22,4 +22,7 @@ public class CreateReviewCommand {
     private final int personReview;
     private final String phone;
     private final boolean ban;
+    private final int range;
+    private final boolean delivery;
+    private final boolean pickUp;
 }

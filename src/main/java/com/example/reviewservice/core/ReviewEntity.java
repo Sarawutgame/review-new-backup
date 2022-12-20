@@ -30,4 +30,7 @@ public class ReviewEntity implements Serializable {
     private int personReview;
     private String phone;
     private boolean ban;
+    private int range;
+    private boolean delivery;
+    private boolean pickUp;
 }

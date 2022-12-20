@@ -42,6 +42,9 @@ public class ReviewCommandController {
                 .personReview(model.getPersonReview())
                 .phone(model.getPhone())
                 .ban(model.isBan())
+                .range(model.getRange())
+                .delivery(model.isDelivery())
+                .pickUp(model.isPickUp())
                 .build();
 
         String result;
@@ -68,6 +71,9 @@ public class ReviewCommandController {
                 .personReview(model.getPersonReview())
                 .phone(model.getPhone())
                 .ban(model.isBan())
+                .range(model.getRange())
+                .delivery(model.isDelivery())
+                .pickUp(model.isPickUp())
                 .build();
 
         String result;
@@ -79,32 +85,6 @@ public class ReviewCommandController {
         return result;
 
     }
-//    @PostMapping
-//    public String newReview(@RequestBody CreateReviewModel model){
-//
-//        CreateReviewCommand command = CreateReviewCommand.builder()
-//                .reviewId(UUID.randomUUID().toString())
-//                .name(model.getName())
-//                .branch(model.getBranch())
-//                .store_type(model.getStore_type())
-//                .description(model.getDescription())
-//                .imageId(model.getImageId())
-//                .address(model.getAddress())
-//                .timeOpen(model.getTimeOpen())
-//                .timeClose(model.getTimeClose())
-//                .personReview(model.getPersonReview())
-//                .phone(model.getPhone())
-//                .build();
-//        String result;
-//        try {
-//            result = commandGateway.sendAndWait(command);
-//        }catch (Exception e){
-//            result = e.getLocalizedMessage();
-//        }
-//
-//        return result;
-////        return "create Review : " + model.getName();
-//    }
 
     @DeleteMapping
     public String deleteReview(){
