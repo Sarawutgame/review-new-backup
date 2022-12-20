@@ -72,6 +72,10 @@ public class ReviewAggregate {
         this.personReview = reviewCreatedEvent.getPersonReview();
         this.phone = reviewCreatedEvent.getPhone();
         this.ban = reviewCreatedEvent.isBan();
+        this.userId = reviewCreatedEvent.getUserId();
+        this.range = reviewCreatedEvent.getRange();
+        this.delivery = reviewCreatedEvent.isDelivery();
+        this.pickUp = reviewCreatedEvent.isPickUp();
     }
 
     @CommandHandler
@@ -96,6 +100,10 @@ public class ReviewAggregate {
         this.personReview = event.getPersonReview();
         this.phone = event.getPhone();
         this.ban = event.isBan();
+        this.userId = event.getUserId();
+        this.range = event.getRange();
+        this.delivery = event.isDelivery();
+        this.pickUp = event.isPickUp();
     }
 
 }
